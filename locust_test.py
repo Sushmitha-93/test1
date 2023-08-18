@@ -5,6 +5,7 @@ import json
 
 
 class PerformanceTests(HttpUser):
+    host = "http://127.0.0.1:8000"
     wait_time = between(1, 3)
 
     @task(1)

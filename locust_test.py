@@ -10,7 +10,7 @@ class PerformanceTests(HttpUser):
 
     @task(1)
     def text_to_image_task(self):
-        sample = TextToImageRequest(prompt="Cat playing with puppy")
+        sample = TextToImageRequest(prompt="Cat playing with puppy", steps=25, negative_prompt="disfigured, ugly, deformed")
         headers = {'Accept': 'application/json',
                    'Content-Type': 'application/json'}
         self.client.post("/text-to-image",
